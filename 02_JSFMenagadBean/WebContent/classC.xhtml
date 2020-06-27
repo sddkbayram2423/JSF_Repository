@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>ClassC</title>
+</head>
+<body>
+<f:view>
+	<h:form id="form1">
+
+			<h:panelGrid columns="2" border="1">
+				<f:facet name="header">
+					<h:outputText value="Üye Grisi" />
+				</f:facet>
+
+				<h:outputText value="Adı :" />
+				<h:inputText value="#{classC.adi}" />
+
+				<h:outputText value="Soyadı :" /> 
+				<h:inputText value="#{classC.soyadi}" />
+				
+				<h:outputText value="Deneyim :" /> 
+				<h:selectOneRadio layout="pageDirection" value="#{classC.deneyim}">
+						<f:selectItem itemValue="JSP" itemLabel="JSP" />
+						<f:selectItem itemValue="JSF" itemLabel="JSF" />
+						<f:selectItem itemValue="MVC" itemLabel="MVC" />
+						<f:selectItem itemValue="MySQL" itemLabel="MySQL" />
+						<f:selectItem itemValue="Oracle" itemLabel="Oracle" />
+						<f:selectItem itemValue="Java EE" itemLabel="Java EE" />
+				</h:selectOneRadio> 
+					
+					
+				<h:commandButton type="reset" value="Temizle" />
+				<h:commandButton action="#{classC.toString()}" value="-     	Gönder		-" /> 
+			</h:panelGrid>
+
+			<h:panelGrid columns="2">
+			
+				<f:facet name="header" >
+				<h:outputText value="Girilen Bilgilerinz"/>
+				</f:facet>
+			
+				<h:outputText value="Adı Soyadı :" />
+				<h:outputLabel value="#{classC.adi} #{classC.soyadi}" />
+
+				<h:outputText value="Deneyim :" />
+				<h:outputLabel value="#{classC.deneyim}" />
+			
+			</h:panelGrid>
+	</h:form>
+</f:view></body>
+</html>

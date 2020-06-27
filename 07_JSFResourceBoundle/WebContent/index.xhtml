@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Index</title>
+</head>
+<body>
+	<f:view>
+		<h2>Resource Bundles</h2>
+		<f:loadBundle basename="com.bayram.messages" var="msj" />
+		<ol>
+			<li><h:outputText value="#{msj.message}" /></li>
+			
+
+			<li>
+				<h:outputText value="#{msj['message.test1']}" />
+				<h:outputText value="#{msj['message.test2']}" />
+				<h:outputText value="#{msj['message.test3']}" />
+			</li>
+			
+			<li>
+				<h:outputText value="#{msj['message.test1']}" escape="false" /> 
+				<h:outputText value="#{msj['message.test2']}" escape="false" /> 
+				<h:outputText value="#{msj['message.test3']}" escape="false" />
+			</li>
+			
+			<li>
+				<h:outputFormat value="#{msj['message.param1']}">
+					<f:param value="James" />
+					<f:param value="Bond" />
+					<f:param value="UK" />
+				</h:outputFormat>
+			</li>
+			
+			<li>
+			<h:outputFormat value="#{msj['message.param2']}">
+					<f:param value="Ali" />
+					<f:param value="Kara" />
+					<f:param value="Konya" />
+			</h:outputFormat>
+			</li>
+		</ol>
+	</f:view>
+</body>
+</html>

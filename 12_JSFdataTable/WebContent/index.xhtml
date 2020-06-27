@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+<h:head>
+<title>Ana Sayfa</title>
+<h:outputStylesheet library="css" name="table-style.css"/>
+</h:head> 
+<body> 
+	
+	<br/>
+	<font style="align-content: center;" color="red">PERSONEL TABLOMUZ</font>
+		<hr/>
+		<h:form>
+			<table>
+				<tr>
+					<td><h:outputText value="Personel No:" /></td>
+					<td><h:inputText value="#{mainBean.no}" id="p_no" label="no" required="true">
+							<f:convertNumber />
+						</h:inputText> 
+					</td>
+				</tr>
+				<tr>
+				
+					<td><h:outputText value="Personel Ad:" /></td>
+					<td><h:inputText value="#{mainBean.ad}" id="p_ad" label="ad" required="true" /></td>
+				</tr>
+				<tr>
+					<td><h:outputText value="Personel Soyad:" /></td>
+					<td><h:inputText value="#{mainBean.soyad}" id="p_soyad" label="soyad" required="true" /> </td>
+				</tr>
+				<tr>
+					<td><h:outputText value="Personel Maaş:" /></td>
+					<td><h:inputText value="#{mainBean.maas}" id="p_maaş" label="maaş" required="true"/> </td>
+				</tr>
+				
+				<tr>
+				<td>
+				<h:commandButton value="Kaydet" action="#{mainBean.personelEkle()}" />
+				</td>
+				<td>
+				<h:commandButton action="result" value="Değişiklikleri Kaydet" />
+				</td>
+				<td>
+				<h:commandButton type="reset" value="Temizle" />
+				</td>
+				</tr>
+			</table>
+			
+			<hr/>
+
+			<h:dataTable value="#{mainBean.personels}" var="personel" styleClass="personel-tablo"
+															    			headerClass="personel-tablo-baslik"
+															    			rowClasses="personel-tablo-tek-satir,personel-tablo-cift-satir">
+																		
+				<h:column>
+					<f:facet name="header"><strong>  Personel No </strong></f:facet>
+					<h:outputText value="#{personel.personelNo}" />	
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header"> <strong> Personel Adı</strong></f:facet>
+					<h:outputText value="#{personel.adi}" />	
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header"><h:commandLink action="#{mainBean.personelSirala()}" value="Personel Soyadı" /> 
+					</f:facet>
+					<h:outputText value="#{personel.soyadi}" />	
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header"><strong> Personel Maaş</strong></f:facet>
+					<h:outputText value="#{personel.maas}"/>	
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header"><strong>Sil</strong> </f:facet>
+					<h:commandLink action="#{mainBean.personelSil(personel)}" value="Sil}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header"><strong>Düzenle</strong>
+					</f:facet>
+					<h:commandLink action="result" value="Düzenle" />
+<!-- 					<h:commandButton action="#{mainBean.degisikligiKaydet()}" value="Kaydet" rendered="#{not personel.düzenle}" />  -->
+				</h:column>
+				
+			</h:dataTable>
+		</h:form>
+</body> 
+</html>

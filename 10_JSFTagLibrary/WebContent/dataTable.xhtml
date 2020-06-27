@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:mj="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Data Table</title>
+<h:outputStylesheet name="css/table-style.css"/>
+</h:head>
+<body>
+<f:view>
+               
+        <div class="kirmizi"><h2>DataTable</h2></div>
+
+        <h:dataTable value="#{mainBean.personelListesi}" 
+                     var="personel"
+                     styleClass="personel-tablo"
+                     headerClass="personel-tablo-baslik"
+                     rowClasses="personel-tablo-tek-satir,personel-tablo-cift-satir">
+
+            <h:column>
+                <h:graphicImage library="images" name="ok_isareti.png" />
+                <f:facet name="header">NUMARASI</f:facet>
+           		#{personel.numarasi}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">ADI SOYADI</f:facet>
+                #{personel.adiSoyadi}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">YAŞI</f:facet>
+               #{personel.yasi}
+            </h:column>
+
+            <h:column>
+                <h:graphicImage library="images" name="para.png" />
+                <f:facet name="header">MAAŞI</f:facet>
+               #{personel.maasi}
+            </h:column>
+        </h:dataTable>
+</f:view>
+</body>
+</html>

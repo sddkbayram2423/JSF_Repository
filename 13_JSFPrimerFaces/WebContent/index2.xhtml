@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<title>Test</title>
+</h:head> 
+<body> 
+	<font color="red">Ajax Test</font>
+	<hr/>
+	<form >
+	<h:outputText value="Adı:" />
+	<h:inputText id="ad_text" value="#{keyboardView.value1}"/>
+	<br/>
+	<h:outputText id="ad_label" value="#{keyboardView.value1}"/>
+	<h:commandButton value="Gönder">
+	<f:ajax execute="ad_text" render="ad_label" />
+	</h:commandButton>
+	</form>
+</body> 
+</html>

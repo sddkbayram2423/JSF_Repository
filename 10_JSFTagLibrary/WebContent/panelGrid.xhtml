@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:mj="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title>Grid Panel</title>
+</h:head>
+<body>
+	<f:view>
+		<h:form>
+			<h:panelGrid columns="1">
+
+
+				<f:facet name="header">
+					<h:outputText value="Üye Girisi" style="color:blue" />
+				</f:facet>
+				<p></p>
+				<h:outputText value="TC NO:" />
+				<h:inputText size="30" id="tcNo" label="T.C No" required="true">
+					<f:convertNumber />
+				</h:inputText>
+				<h:message for="tcNo" style="color:red" />
+
+				<h:outputText value="Kullanıcı Adı :" />
+				<h:inputText size="30" id="kallnciadi" label="Kullanıcı Adı :"
+					required="true">
+					<f:validateLength maximum="20" minimum="2" />
+				</h:inputText>
+				<h:message for="kallnciadi" style="color:red" />
+
+
+				<h:outputText value="Sayım :" />
+				<h:inputText size="30" id="sayım" label="sayım :" required="true">
+					<f:validateLongRange maximum="2000" minimum="1000" />
+				</h:inputText>
+				<h:message for="sayım" style="color:red" />
+
+
+				<h:commandButton action="outputScript" value="Gönder" />
+			</h:panelGrid>
+		</h:form>
+	</f:view>
+</body>
+</html>

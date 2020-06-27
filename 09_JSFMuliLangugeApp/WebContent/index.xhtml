@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Index</title>
+</head>
+<body>
+	<f:view>
+		<h:form>
+			<h:panelGrid columns="3" style="border: 5px solid gold; width:500px">
+			 	
+				
+				<h:outputText value="#{lang['language']}" />
+
+				<h:selectOneMenu value="##{localeBean.locale}" onchange="submit()"
+					valueChangeListener="#{localeBean.changeLocaleContolMetod()}"
+					style="border: 2px solid darkgoldenrod; width:200px">
+					<f:selectItems value="#{localeBean.countriesMap}" />
+				</h:selectOneMenu>
+				
+			</h:panelGrid>
+
+			<h:panelGrid style="border: 5px solid red; width:500px" columns="2"
+				cellspacing="10" cellpadding="0">
+
+				<f:facet name="header">
+					<h:outputText value="#{lang.system_login}" />
+				</f:facet>
+
+
+
+				<h:outputText value="#{lang.name}" />
+				<h:inputText value="-" />
+				<h:outputText value="#{lang['surname']}" />
+				<h:inputText value="-" />
+				<h:outputText value="#{lang['username']}" />
+				<h:inputText value="-" />
+				<h:outputText value="#{lang['password']}" />
+				<h:inputText value="-" />
+				<h:panelGroup />
+				<h:commandButton value="#{lang['login']}"
+					action="UyeGirisMetoduBurayaGelecek" />
+			</h:panelGrid>
+
+		</h:form>
+
+
+	</f:view>
+</body>
+</html>

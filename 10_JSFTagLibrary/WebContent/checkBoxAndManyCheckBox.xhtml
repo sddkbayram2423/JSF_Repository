@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Index</title>
+</head>
+<body>
+	<h:form>
+		<h:graphicImage value="resimler/onay.png" />
+		<b style="color: blue">En sevidigin faaliyet kod yazmak mi? </b>
+		<h:selectBooleanCheckbox value="#{mBean1.dogrumu}" />
+
+		<hr />
+
+            
+            
+            SelectManyCheckbox 
+            <br />
+
+		<b style="color: red">Yazilim Severler</b>
+		<h:selectManyCheckbox value="#{mBean2.yazilimSevenler}">
+			<f:selectItem itemValue="1" itemLabel="Halil Yılmaz" />
+			<f:selectItem itemValue="2" itemLabel="Eren Koca" />
+			<f:selectItem itemValue="3" itemLabel="Zelal Aydoğdu" />
+			<f:selectItem itemValue="4" itemLabel="Mustafa Baba" />
+			<f:selectItem itemValue="5" itemLabel="Bahar Akkaya" />
+			<f:selectItem itemValue="6" itemLabel="Ali Dur" />
+		</h:selectManyCheckbox>
+		<hr />
+
+
+            SelectManyCheckbox 
+            <br />
+		<h:graphicImage value="/resimler/iphone.png" />
+		<b style="color: red">IPhone Severler</b>
+		<h:selectManyCheckbox value="#{mBean3.iphoneSeverler}">
+			<f:selectItems value="#{mBean3.iphoneSeverlerResult}" />
+		</h:selectManyCheckbox>
+		<hr />
+
+
+
+            SelectManyCheckbox   
+            <br />
+		<b style="color: red">Mobil Severler</b>
+		<h:selectManyCheckbox value="#{mBean4.mobilSeverler}">
+			<f:selectItems value="#{mBean4.javaGuiSeverlerAdiSoyadi}" />
+		</h:selectManyCheckbox>
+		<hr />
+
+
+
+
+
+            SelectManyCheckbox
+            <br />
+		<b style="color: red">Web Severler</b>
+		<h:selectManyCheckbox value="#{mBean5.webSeverler}">
+			<f:selectItems value="#{mBean5.jsfSeverlerAdiSoyadi}" var="sayi"
+				itemLabel="#{sayi.sayiEtiketi}" 
+				itemValue="#{sayi.sayiDegeri}" />
+		</h:selectManyCheckbox>
+		<hr />
+
+
+		<h:commandButton value="Temizle" type="reset" />
+		<h:commandButton value="Gönder" action="sayfa4" />
+
+	</h:form>
+</body>
+</html>

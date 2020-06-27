@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+            <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>UISelectedManyBileseni</title>
+</head>
+<body>
+<f:view>
+
+	<font color="red">Seçili Bileşen Türleri Listesi</font>
+	<hr>
+	
+	<h:form>
+	<font color="blue">SELECT MANY CHECKBOX</font><br>
+	<h:outputText value="Tecrübeli olduğunuz alanalrı seçiinz.."/><br>
+	<h:selectManyCheckbox id="deneyim1"  layout="pageDirection">
+	<f:selectItem id="secim1" itemValue="1" itemLabel="JSP"/>
+	<f:selectItem id="secim2" itemValue="2" itemLabel="JSF"/>
+	<f:selectItem id="secim3" itemValue="3" itemLabel="MVC"/>
+	<f:selectItem id="secim4" itemValue="4" itemLabel="Spring Boot"/>
+	<f:selectItem id="secim5" itemValue="5" itemLabel="Android"/>
+	<f:selectItem id="secim6" itemValue="6" itemLabel="MySql"/>
+	<f:selectItem id="secim7" itemValue="7" itemLabel="Oracle"/>
+	</h:selectManyCheckbox>
+	
+	<hr>
+	
+	<font color="green">SELECT MANY MENU</font><br>
+	<h:outputText value="Tecrübeli olduğunuz alanalrı seçiinz.."/><br>
+	<h:selectManyMenu id="deneyim2">
+	<f:selectItem id="secenek1" itemValue="1" itemLabel="JSP"/>
+	<f:selectItem id="secenek2" itemValue="2" itemLabel="JSF"/>
+	<f:selectItem id="secenek3" itemValue="3" itemLabel="MVC"/>
+	<f:selectItem id="secenek4" itemValue="4" itemLabel="Spring Boot"/>
+	<f:selectItem id="secenek5" itemValue="5" itemLabel="Android"/>
+	<f:selectItem id="secenek6" itemValue="6" itemLabel="MySql"/>
+	<f:selectItem id="secenek7" itemValue="7" itemLabel="Oracle"/>
+	</h:selectManyMenu>
+	
+	<hr>
+	
+	<font color="pink">SELECT MANY LİSTBOX</font><br>
+	<h:outputText value="Tecrübeli olduğunuz alanalrı seçiinz.."/><br>
+	<h:selectManyListbox id="deneyim3">
+	<f:selectItem id="a" itemValue="1" itemLabel="JSP"/>
+	<f:selectItem id="a1" itemValue="2" itemLabel="JSF"/>
+	<f:selectItem id="a2" itemValue="3" itemLabel="MVC"/>
+	<f:selectItem id="a3" itemValue="4" itemLabel="Spring Boot"/>
+	<f:selectItem id="a4" itemValue="5" itemLabel="Android"/>
+	<f:selectItem id="a5" itemValue="6" itemLabel="MySql"/>
+	<f:selectItem id="a6" itemValue="7" itemLabel="Oracle"/>
+	</h:selectManyListbox>
+	
+	</h:form>
+
+</f:view>
+</body>
+</html>

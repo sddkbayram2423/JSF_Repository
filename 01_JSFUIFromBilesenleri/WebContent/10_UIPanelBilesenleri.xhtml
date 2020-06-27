@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+            <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>UIPanelBileseni</title>
+</head>
+<body>
+	<f:view>
+	
+		<font color="red">Panel Çalışmaları</font><hr>
+
+		<h:form>
+			<h:panelGrid border="1" columns="3" footerClass="footer" id="tablePanel">
+
+				<f:facet name="header">
+					<h:outputText value="Tablo Elemanları" />
+				</f:facet>
+				
+				<h:outputText value="01" />
+				<h:outputText value="02" />
+				<h:outputText value="03" />
+				<h:outputText value="04" />
+				<h:outputText value="05" />
+				<h:outputText value="06" />
+				<h:outputText value="07" />
+				<h:outputText value="08" />
+				<h:outputText value="09" />
+
+				<f:facet name="footer">
+					<h:panelGroup>
+						<h:outputText value="Gönül neyi severse" />
+						<br>
+						<h:outputText value="Zevkin doruk noktası onda gizlidir" />
+					</h:panelGroup>
+				</f:facet>
+				
+			</h:panelGrid><hr>
+
+			<h:panelGrid border="0" columns="2" id="üyeGirisi">
+
+				<f:facet name="header">
+					<h:outputText  value="Üye Girişi" />
+				</f:facet>
+
+				<h:outputLabel value="Kullanıcı Adı" for="adiSoyadi" id="kullaniciAdi" />
+				<h:inputText id="adiSoyadi" />
+				<h:outputLabel value="Parola " for="parola" id="password" />
+				<h:inputSecret id="parola" redisplay="false" />
+
+				<f:facet name="footer">
+					<h:panelGroup style="display:block; text-align:right" >
+					<h:selectBooleanCheckbox value="#{false}" />
+					<h:outputText value="Beni Hatırla  " />
+					<h:commandButton type="submit" value="Giriş" />
+					</h:panelGroup>
+				</f:facet>
+
+			</h:panelGrid>
+		</h:form>
+	</f:view>
+</body>
+</html>

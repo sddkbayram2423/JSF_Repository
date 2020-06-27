@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Sayfa</title>
+</head>
+<body>
+	<f:view>
+		<font class="red">Select one Raio</font>
+		<h:form>
+			<b style="color: blue">Manuel</b>
+			<h:selectOneListbox value="#{mainClassRadio.dersAdi}">
+				<f:selectItem itemValue="Java " itemLabel="JSP" />
+				<f:selectItem itemValue="Veri Tabanı" itemLabel="MySql" />
+				<f:selectItem itemValue="Matematik" itemLabel="Integral" />
+				<f:selectItem itemValue="Yabancı dil" itemLabel="İngilizce" />
+				<f:selectItem itemValue="Java EE" itemLabel="Web" />
+			</h:selectOneListbox>
+
+
+			<b style="color: orange">Map</b>
+			<h:selectOneListbox value="#{mainClassRadio.egitmen}">
+				<f:selectItems value="#{mainClassRadio.alanAdi}"></f:selectItems>
+			</h:selectOneListbox>
+
+
+			<h:selectOneListbox value="#{mainClassRadio.ogrenci}">
+				<f:selectItems value="#{mainClassRadio.ogrenciler()}" var="ogrenci"
+					itemLabel="#{ogrenci.adi}" itemValue="#{ogrenci.bolumu}" />
+			</h:selectOneListbox>
+
+			<h:commandButton type="reset" value="Temizle" />
+			<h:commandButton action="sayfa6" value="Gönder" />
+
+		</h:form>
+
+
+
+	</f:view>
+</body>
+</html>

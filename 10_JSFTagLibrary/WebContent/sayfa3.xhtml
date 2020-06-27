@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<title>Sayfa1</title>
+</head>
+<body>
+<f:view>
+				<font color="Red">Gelen Bilgiler</font>
+		<h:form>
+			<table border="1" width="500">
+				<tbody>
+
+					<tr>
+						<td><h:outputText value="Adı Soyadı : #{mainClassInputTextArea.adiSoyadi}"/></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Mesaj : #{mainClassInputTextArea.mesaj}"/></td>
+					</tr>
+					<tr>
+						<td><h:outputText value="Adres : #{mainClassInputTextArea.adres}"/></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</h:form>
+	</f:view>
+</body>
+</html>

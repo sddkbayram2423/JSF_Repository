@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+<h:head>
+<title>Ana Sayfa</title>
+<h:outputStylesheet library="css" name="table-style.css"/>
+</h:head> 
+<body> 
+	
+	<br/>
+	<font style="align-content: center;" color="red">GELEN PERSONEL TABLOMUZ</font>
+		<hr/>
+			<table>
+				<tr>
+					<td><h:outputText value="#{mainBean.no}" /></td>
+				</tr>
+				<tr>
+					<td><h:outputText value="#{mainBean.ad}"  /></td>
+				</tr>
+				<tr>
+					<td><h:outputText value="#{mainBean.soyad}" /></td>
+				</tr>
+				<tr>
+					<td><h:outputText value="#{mainBean.maas}" /></td>
+				</tr>
+			
+			</table>
+			
+</body> 
+</html>
